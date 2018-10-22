@@ -1,0 +1,40 @@
+{
+    "manifest_version": 2,
+    "name": "AdBlock",
+    "version": "1.0.0",
+    "description": "一款屏蔽广告的Chrome扩展",
+    "browser_action": {
+        "default_icon": "imgs/icon.png",
+        "default_title": "AdBlock",
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "scripts": [
+            "js/background.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.baidu.com/"
+            ],
+            "js": [
+                "js/block/baidu_search.js"
+            ],
+            "run_at": "document_end"
+        },
+        {
+            "matches": [
+                "https://blog.csdn.net/*"
+            ],
+            "js": [
+                "js/block/csdn_blog.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "permissions": [
+        "tag",
+        "storage"
+    ]
+}
