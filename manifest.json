@@ -15,8 +15,10 @@
     },
     "content_scripts": [
         {
+            "name": "baidu search",
+            "enable": true,
             "matches": [
-                "https://www.baidu.com/"
+                "https://www.baidu.com/*"
             ],
             "js": [
                 "js/block/baidu_search.js"
@@ -24,6 +26,8 @@
             "run_at": "document_end"
         },
         {
+            "name": "csdn blog",
+            "enable": true,
             "matches": [
                 "https://blog.csdn.net/*"
             ],
